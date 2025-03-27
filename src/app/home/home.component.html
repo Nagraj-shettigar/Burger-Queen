@@ -1,0 +1,76 @@
+<div class="search">
+    <input type="text" placeholder="Search...">
+    <img class="icon" src="/assets/search.png" alt="Search Icon">
+</div>
+
+<div class="menu">
+  
+    <!-- Popular Items -->
+    <div class="Popular">
+      <h2>Popular Options</h2>
+      <hr>
+      <div class="food">
+        <div class="card" *ngFor="let item of dataPopular; let i = index">
+          <div class="card-head" (click)="viewDetails(i, 'popular')">
+            <img [src]="item.img" alt="burger img" />
+          </div>
+          <div class="card-body">
+            <h4 class="name">{{ item.name }}</h4>
+            <h5 class="price">Price: {{ item.price }}</h5>
+            <button 
+              class="add-btn" 
+              (click)="addCart(i, 'popular', $event)">
+              {{ btntextPopular[i] }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Special Items -->
+    <div class="Special">
+      <h2>Special Options</h2>
+      <hr>
+      <div class="food">
+        <div class="card" *ngFor="let item of dataSpecial; let i = index">
+          <div class="card-head" (click)="viewDetails(i, 'special')">
+            <img [src]="item.img" alt="burger img" />
+          </div>
+          <div class="card-body">
+            <h4 class="name">{{ item.name }}</h4>
+            <h5 class="price">Price: {{ item.price }}</h5>
+            <button 
+              class="add-btn" 
+              (click)="addCart(i, 'special', $event)">
+              {{ btntextSpecial[i] }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- New Items -->
+    <div class="New">
+      <h2>New Arrivals</h2>
+      <hr>
+      <div class="food">
+        <div class="card" *ngFor="let item of new; let i = index">
+          <div class="card-head" (click)="viewDetails(i, 'new')">
+            <img [src]="item.img" alt="burger img" />
+          </div>
+          <div class="card-body">
+            <h4 class="name">{{ item.name }}</h4>
+            <h5 class="price">Price: {{ item.price }}</h5>
+            <button 
+              class="add-btn" 
+              (click)="addCart(i, 'new', $event)">
+              {{ btntextNew[i] }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+<br><br>

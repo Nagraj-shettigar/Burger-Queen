@@ -1,0 +1,11 @@
+<app-navigation></app-navigation>
+
+<br>
+
+<app-home *ngIf="componentFlag==true"  (detailEmitter)="fetchedData($event)"></app-home>
+
+<br>
+
+<app-menu ></app-menu>   
+<app-product *ngIf="componentFlag==false" [productData]="productData" ></app-product>
+
